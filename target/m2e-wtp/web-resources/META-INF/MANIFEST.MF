@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Daegra
+Build-Jdk: 11.0.1
+Implementation-Title: SITTM
+Implementation-Version: 0.1-SNAPSHOT
+Implementation-Vendor-Id: ru.itmonopoly
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/SITTMBack
+Created-By: Maven Integration for Eclipse
+
