@@ -2,15 +2,14 @@ package ru.itmonopoly.SITTM.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class SITTMMVCController {
-	  @RequestMapping("/hellomvc")
-	    public String hellomvc(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-	        model.addAttribute("name", name);
-	        return "hellomvc";
-	    }
+public class SITTMMVCController  {
+@GetMapping ("/")
+public String index(Model model) {
+	model.addAttribute("message", "Dmitry");
+	return "index";
+}
 
 }
