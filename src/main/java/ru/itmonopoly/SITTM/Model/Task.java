@@ -7,13 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "Task")
-public class Task  {
+@Table(name = "Task")
+public class Task {
 	@Id
-	@GeneratedValue (generator = "increment")
-	@Column (name = "id")
+	@GeneratedValue(generator = "increment")
+	@Column(name = "id")
 	private long id;
-	@Column (name = "name")
+	@Column(name = "name")
 	private String name;
 
 	public long getId() {

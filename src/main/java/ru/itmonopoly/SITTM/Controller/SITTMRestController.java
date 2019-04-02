@@ -15,19 +15,20 @@ import ru.itmonopoly.SITTM.Service.Implement.SITTMTaskServiceImpl;
 public class SITTMRestController {
 	@Autowired
 	SITTMTaskServiceImpl taskquery = new SITTMTaskServiceImpl();
+
 	@GetMapping("/HelloRest")
-	public String  Hello() {
+	public String Hello() {
 		return "Helloworld";
 	}
 
 	@GetMapping("/task")
-		public List<Task> ReadAll(){
-			return taskquery.getAll();
-		}
-	@PostMapping("/task")
-	 public Task writeTask(@RequestBody Task task) {
-		Task savedTask = taskquery.addTask(task);
-		return savedTask ;
-	}
+	public List<Task> ReadAll() {
+		return taskquery.getAll();
 	}
 
+	@PostMapping("/task")
+	public Task writeTask(@RequestBody Task task) {
+		Task savedTask = taskquery.addTask(task);
+		return savedTask;
+	}
+}
