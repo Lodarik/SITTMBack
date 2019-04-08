@@ -1,7 +1,11 @@
 @charset "UTF-8";
 body {
-  padding-top: 5rem;
- background-image:image("main.jpg")
+ padding-top: 5rem;
+ background-image:url("/css/main.png");
+ -moz-background-size: cover;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ background-size: cover;
 
 }
 .starter-template {
