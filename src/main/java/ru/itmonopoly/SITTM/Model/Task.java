@@ -2,6 +2,8 @@ package ru.itmonopoly.SITTM.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,7 +31,8 @@ public class Task {
 	@Column(name = "date", nullable = false)
 	private String date;
 	@Column(name = "status", length = 500, nullable = false)
-	private String status;
+	@Enumerated(EnumType.STRING)
+	private Statuses status;
 	@Column(name = "description")
 	private String description;
 
@@ -87,11 +90,11 @@ public class Task {
 		this.date = date;
 	}
 
-	public String getStatus() {
+	public Statuses getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Statuses status) {
 		this.status = status;
 	}
 
