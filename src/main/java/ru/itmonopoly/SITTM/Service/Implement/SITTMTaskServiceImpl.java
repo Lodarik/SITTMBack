@@ -14,6 +14,7 @@ public class SITTMTaskServiceImpl implements SITTMTaskService {
 
 	@Autowired
 	private TaskRepository taskRepository;
+
 	@Override
 	public Task addTask(Task task) {
 		Task savedTask = taskRepository.saveAndFlush(task);
@@ -23,24 +24,24 @@ public class SITTMTaskServiceImpl implements SITTMTaskService {
 	@Override
 	public void delete(long id) {
 		taskRepository.deleteById(id);
-		
+
 	}
 
 	@Override
 	public Task getByName(String name) {
-		
+
 		return taskRepository.findByName(name);
 	}
 
 	@Override
 	public Task editTask(Task task) {
-		
+
 		return taskRepository.saveAndFlush(task);
 	}
 
 	@Override
-	public  List<Task> getAll() {
-		
+	public List<Task> getAll() {
+
 		return taskRepository.findAll();
 	}
 

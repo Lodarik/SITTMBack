@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ru.itmonopoly.SITTM.SittmApplicationTests
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.659 s - in ru.itmonopoly.SITTM.SittmApplicationTests
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.341 s - in ru.itmonopoly.SITTM.SittmApplicationTests
->>>>>>> master
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.111 s - in ru.itmonopoly.SITTM.SittmApplicationTests

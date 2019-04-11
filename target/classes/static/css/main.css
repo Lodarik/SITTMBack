@@ -1,0 +1,23 @@
+@charset "UTF-8";
+body {
+ padding-top: 5rem;
+ background-image:url("/css/main.png");
+ -moz-background-size: cover;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ background-size: cover;
+
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+h1{
+	color:#0000FF;
+}
+
+h2{
+    color:#FF0000;
+   
+}
