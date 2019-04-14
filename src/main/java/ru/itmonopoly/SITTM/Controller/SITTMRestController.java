@@ -8,13 +8,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import ru.itmonopoly.SITTM.Model.Persons;
 import ru.itmonopoly.SITTM.Model.Task;
+import ru.itmonopoly.SITTM.Service.Implement.SITTMPersonsServiceImpl;
 import ru.itmonopoly.SITTM.Service.Implement.SITTMTaskServiceImpl;
 
 @RestController
 public class SITTMRestController {
 	@Autowired
 	SITTMTaskServiceImpl taskquery = new SITTMTaskServiceImpl();
+	@Autowired
+	SITTMPersonsServiceImpl personQuery = new SITTMPersonsServiceImpl();
+
 
 	@GetMapping("/HelloRest")
 	public String Hello() {
