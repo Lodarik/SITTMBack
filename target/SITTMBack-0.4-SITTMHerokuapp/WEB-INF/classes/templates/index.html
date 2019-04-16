@@ -6,7 +6,13 @@
     <link href="/css/main.css" rel="stylesheet">
 </head>
 <body>
-    <h2 class="hello-title" th:text="'Hello, ' + ${name} + '!'"></h2>
+    <h2 align ="center" class="hello-title" th:text="'Hello, ' + ${name} + '!'"></h2>
+    <form action="#" th:action="@{/}"  method="post">
+       <fieldset>
+        <input type = "text" name = "user">
+        <input type = "submit" th:field = "${user}">
+       </fieldset>
+    </form>
     <script src="/js/main.js"></script>
 </body>
 </html>

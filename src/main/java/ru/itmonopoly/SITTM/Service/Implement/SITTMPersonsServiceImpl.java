@@ -5,14 +5,14 @@ import org.springframework.stereotype.Service;
 
 import ru.itmonopoly.SITTM.Model.Persons;
 import ru.itmonopoly.SITTM.Repository.PersonsRepository;
-import ru.itmonopoly.SITTM.Service.SITTMPersonsService;
+import ru.itmonopoly.SITTM.Service.SITTMPersonService;
 
 @Service
-public class SITTMPersonsServiceImpl implements SITTMPersonsService {
+public class SITTMPersonsServiceImpl implements SITTMPersonService {
 	@Autowired
 	private PersonsRepository personsRepository;
 
-	@Override
+	
 	public Persons addperson(Persons person) {
 		Persons newuser = personsRepository.saveAndFlush(person);
 		return newuser;
