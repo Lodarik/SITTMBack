@@ -1,9 +1,6 @@
 package ru.itmonopoly.SITTM.Controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,50 +9,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import ru.itmonopoly.SITTM.Model.Task;
-import ru.itmonopoly.SITTM.Service.Implement.SITTMPersonsServiceImpl;
-import ru.itmonopoly.SITTM.Service.Implement.SITTMTaskServiceImpl;
+import ru.itmonopoly.SITTM.Repository.TaskRepository;
+
 
 
 @RestController
 public class SITTMRestController {
 	@Autowired
-	SITTMTaskServiceImpl taskquery = new SITTMTaskServiceImpl();
-	@Autowired
-	SITTMPersonsServiceImpl personQuery = new SITTMPersonsServiceImpl();
+	private TaskRepository taskQuery;
 
-	// Auth
 	
-
+	
+	// Auth
 	@GetMapping("/auth")
 	public void auth(@RequestBody String login) {
 
 	}
 
 	// Short task list
-	@GetMapping("/viewtask")
-	public List<HashMap<String, String>> shorttask() {
-		Task task = new Task();
-		List<Task> fullTask;
-		fullTask = taskquery.getAll();
-		List<HashMap<String, String>> fin = new ArrayList<HashMap<String, String>>();
-		for (int i = 0; i < fullTask.size(); i++) {
-			HashMap<String, String> result = new HashMap<>();
-			long id;
-			String idStr;
-			String name;
-			String descr;
-			task = fullTask.get(i);
-			name = task.getName();
-			descr = task.getDescription();
-			id = task.getId();
-			idStr = Objects.toString(id);
-			result.put("id", idStr);
-			result.put("name", name);
-			result.put("descr", descr);
-			fin.add(result);
-
-		}
-		return fin;
+	@GetMapping("/listtask")
+	public List<Task> shorttask(@RequestBody String login) {
+		List<Task> shortTask;
+		shortTask = taskQuery.listShortTask(login);
+		return shortTask ;
+	}
+	@GetMapping("/fullTask")
+	public Task task(@RequestBody long id) {
+		return taskQuery.getOne(id);
 	}
 
 	// Test links
@@ -65,13 +45,9 @@ public class SITTMRestController {
 	}
 
 	@GetMapping("/task")
-	public List<Task> ReadAll() {
-		return taskquery.getAll();
+	public List<Task> getAll() {
+		return taskQuery.findAll();
 	}
 
-	@PostMapping(path = "/task", produces = MediaType.APPLICATION_XML_VALUE)
-	public Task writeTask(@RequestBody Task task) {
-		Task savedTask = taskquery.addTask(task);
-		return savedTask;
-	}
+	
 }

@@ -9,6 +9,7 @@ import ru.itmonopoly.SITTM.Model.Persons;
 public interface PersonsRepository extends JpaRepository<Persons, Long> {
 	@Query("select t from Persons t where t.login = :login")
 	Persons findByName(@Param("login") String login);
+	
 
 
 }
